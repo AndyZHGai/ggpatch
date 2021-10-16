@@ -1,0 +1,11 @@
+Package: ggpatch
+Type: Package
+Title: Compost figures by using patchwork package
+Version: 0.0.1
+Author: Zhonghui Gai
+Maintainer: ZhonghuiGai <zhgai@aliyun.com>
+Description: Combine figures using patchwork pkg, especially plot_layout and plot_annotation functions
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
