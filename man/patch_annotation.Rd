@@ -18,6 +18,7 @@ patch_annotation(tag_levels = "A", ...)
 A wrap function of plot_annotation of patchwork pkg
 }
 \examples{
+library(ggplot2)
 p1 <- ggplot(mtcars) + geom_point(aes(mpg, disp))
 p2 <- ggplot(mtcars) + geom_boxplot(aes(gear, disp, group = gear))
 p3 <- ggplot(mtcars) + geom_bar(aes(gear)) + facet_wrap(~cyl)

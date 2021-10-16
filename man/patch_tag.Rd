@@ -16,6 +16,7 @@ patch_tag(vjust = -1)
 Format the tag test of Figures, using with patchwork usually
 }
 \examples{
+library(ggplot2)
 ggplot(mtcars) + geom_point(aes(mpg, disp)) + patch_tag()
 }
 \author{

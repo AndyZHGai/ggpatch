@@ -18,10 +18,21 @@ patch_layout(widths = c(5, 5), ...)
 A wrap function of plot_layout function of patchwork pkg to  control how different plots are layed out
 }
 \examples{
+library(ggplot2)
 p1 <- ggplot(mtcars) + geom_point(aes(mpg, disp))
 p2 <- ggplot(mtcars) + geom_boxplot(aes(gear, disp, group = gear))
 p3 <- ggplot(mtcars) + geom_bar(aes(gear)) + facet_wrap(~cyl)
 p1 + p2 + p3 + patch_annotation() + patch_layout()
+library(patchwork)
+(p1 | p2 | p3) + patch_annotation() + patch_layout(ncol = 3)
+(p1 + patch_tag()| p2 | p3) + patch_annotation() + patch_layout(ncol = 3)
+(p1 + patch_tag())/ p2 / p3 + patch_annotation() + patch_layout()
+(p1 + patch_tag()) + p2 / p3 + patch_annotation() + patch_layout()
+((p1 + patch_tag()) + p2) / p3 + patch_annotation() + patch_layout()
+p1 + p2 + p3 + patch_annotation() + patch_layout(ncol = 3, widths = c(1,2,3))
+(p1 + p2 + p3+ patch_layout( widths = c(1,2,3)))/p3 + patch_annotation()
+(p1 + p2 + p3+ patch_layout( widths = c(1,2,3)))/p3 + patch_annotation() +
+patch_layout(heights = c(1,2))
 }
 \author{
 Zhonghui Gai
