@@ -18,6 +18,8 @@
 #' image2 <- jpeg::readJPEG(source = "GoldenGirls.JPG")
 #' p2 <- ggplot() + geom_image(image = image2) + ggpatch:::theme_nothing()
 #' p + p1/p2 + patch_annotation()
+#' # use image as background
+#' ggplot(mtcars) + geom_image(image = image) +geom_point(aes(mpg, disp), color = "red")
 
 geom_image <- function (image){
   annotation_raster(image, xmin = -Inf, xmax = Inf, ymin = -Inf,
